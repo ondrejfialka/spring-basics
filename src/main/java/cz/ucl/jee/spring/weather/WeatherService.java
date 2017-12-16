@@ -2,6 +2,6 @@ package cz.ucl.jee.spring.weather;
 
 public interface WeatherService {
 	
-	float getCurrentTemperature(String location);
+	WeatherReport getCurrentTemperature(String location);
 
 }

@@ -7,9 +7,11 @@ import org.springframework.stereotype.Component;
 @Scope("singleton")
 public class MockWeatherService implements WeatherService {
 
-	public float getCurrentTemperature(String location) {
-		
-		return 17.5f;
+	public WeatherReport getCurrentTemperature(String location) {
+		WeatherReport report = new WeatherReport();
+		report.setCity(location);
+		report.setTemperature(17.5f);
+		return report;
 	}
 
 	

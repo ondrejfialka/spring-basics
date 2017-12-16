@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Configuration;
 public class WarehouseConfig {
 	
 	@Bean(name="warehouse")
-	public WarehouseDao warehouseDao(){
+	public WarehouseDao warehouseDao(WarehouseHelper helper){
 		
 		WarehouseDao dao =  new WarehouseDaoImpl();
 			
 		//if you need to reference another bean, just call the method
-		WarehouseHelper helper = warehouseHelper();
+		//WarehouseHelper helper = warehouseHelper();
 		
 		return dao;
 	}
