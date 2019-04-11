@@ -22,8 +22,5 @@
         <property name="exchangeName" value="NYSE"/>
         <property name="connector" ref="connector" />
     </bean>
-    
-    
-      
- 
+
 </beans>

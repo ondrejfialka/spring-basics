@@ -17,12 +17,10 @@ public class WarehouseConfig {
 		return dao;
 	}
 	
-	
 	@Bean
 	public WarehouseHelper warehouseHelper(){
 		
 		return new WarehouseHelper();
 	}
-	
 
 }

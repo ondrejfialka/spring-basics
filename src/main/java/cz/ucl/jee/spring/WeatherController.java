@@ -4,14 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cz.ucl.jee.spring.weather.WeatherReport;
 import cz.ucl.jee.spring.weather.WeatherService;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 public class WeatherController {
@@ -27,8 +25,10 @@ public class WeatherController {
 		this.weatherService = weatherService;
 	}
 
-	@RequestMapping(value = "/weather/temperature", method = RequestMethod.POST,
-			produces="application/json", consumes="application/json")
+	@PostMapping(
+			value = "/weather/temperature",
+			produces=APPLICATION_JSON_VALUE,
+			consumes=APPLICATION_JSON_VALUE)
 	public ResponseEntity<WeatherReport> getCurrentTemperature(@RequestBody WeatherReport report){
 		
 		if (report.getCity() == null) {
