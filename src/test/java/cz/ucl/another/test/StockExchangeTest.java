@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import cz.ucl.another.StockExchangeService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:spring-example-servlet.xml")
+@ContextConfiguration("classpath:spring-example-conf.xml")
 public class StockExchangeTest {
 
 	@Autowired
